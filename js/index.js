@@ -49,12 +49,43 @@ logo.setAttribute("src", siteContent["nav"]["img-src"]);
 //Navigation bar:
 const nav = document.querySelectorAll("nav a");
 nav.href = "/index.html";
+
+//Updating to green individually since the style is not applicable to a whole NodeList, but rather the individual elements.
+/* nav[0].style.color = "green";
+nav[1].style.color = "green";
+nav[2].style.color = "green";
+nav[3].style.color = "green";
+nav[4].style.color = "green";
+nav[5].style.color = "green"; */
+//I'll loop this below where I add additional navigational items.
+
+// back to content updating:
 nav[0].textContent = siteContent["nav"]["nav-item-1"];
 nav[1].textContent = siteContent["nav"]["nav-item-2"];
 nav[2].textContent = siteContent["nav"]["nav-item-3"];
 nav[3].textContent = siteContent["nav"]["nav-item-4"];
 nav[4].textContent = siteContent["nav"]["nav-item-5"];
 nav[5].textContent = siteContent["nav"]["nav-item-6"];
+
+//adding additional link to Nav bar with appendChild():
+const newLink1 = document.createElement("a");
+newLink1.textContent = "Coded By";
+newLink1.href = "https://github.com/devandapaige";
+document.querySelector("nav").appendChild(newLink1);
+
+//adding additional link to Nav bar with prepend():
+const newLink2 = document.createElement("a");
+newLink2.textContent = "Blog";
+newLink2.href = "/original.html";
+document.querySelector("nav").prepend(newLink2);
+
+//loop to make all the nav text green:
+var x = document.getElementsByTagName("a");
+var i;
+for (i = 0; i < x.length; i++) {
+  x[i].style.color = "green";
+}
+
 //console.log(nav); // node list updated with all the text content and links back to the index.html for each link.
 
 //Main Header:
