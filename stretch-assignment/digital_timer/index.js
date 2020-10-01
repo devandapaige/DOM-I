@@ -14,6 +14,15 @@ const msHundreds = document.getElementById("msHundreds");
 const msTens = document.getElementById("msTens");
 const msOnes = document.getElementById("msOnes");
 
+
+const timer;
+function tenSeconds() {
+    timer = setInterval(makeRed, 10000);
+}
+function makeRed() {
+    digits.classList.toggle('.redDigits')
+}
+
 /* ## Stretch On The Stretch!
   If you compelete the timer with time to spare:
   * Self study and research DOM `events` and `event listeners`
